@@ -24,6 +24,7 @@ body{
     background-color: white;
     /* Fix the position issue later */
     position: fixed; 
+    z-index: 1; 
     width: 100%;
 }
 .navigation__box{
@@ -96,7 +97,23 @@ body{
 }
 /* message pages */
 .msg-container{
-    height: 500%; 
+    height: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center; 
+    border-bottom: black 1px solid; 
+    flex-direction: column;  
+}
+.msg{
+    font-size: 30px; 
+    letter-spacing: 1px; 
+}
+.page-link{
+    font-size: 25px; 
+    text-decoration: none; 
+    color: #707B7C;
+    padding-bottom: 5px; 
+    border-bottom: #707B7C solid 1px;
 }
 /* landing page */
 .jumbotron{
@@ -476,8 +493,17 @@ body{
     font-size: 16px; 
     letter-spacing: 3px; 
 }
+.btn-short{
+    width: 130px; 
+    height: 30px; 
+    font-size: 16px; 
+    letter-spacing: 3px;
+}
 .btn-long1{
     border-bottom: 0; 
+}
+.login-btn{
+    margin-top: 40px; 
 }
 /* footer */
 /* add animation */
@@ -494,3 +520,56 @@ footer{
     letter-spacing: 3px; 
 }
 /* for test purposes */
+/* Sign in page */
+.signin{
+    height: 400px;
+    width: 70vw; 
+    margin: auto; 
+    margin-top: 30px; 
+    padding-bottom: 80px; 
+    padding-top: 50px; 
+}
+.signin_half1{
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 50%; 
+    border: 1px solid black;
+    margin-right: 10px;  
+}
+.login-link{
+    text-decoration: none; 
+    color: black;
+    border-bottom: 1px solid black;
+    padding-bottom: 3px; 
+    font-size: 16px; 
+}
+.login-link:hover{
+    color: #707B7C; 
+    border-bottom: 1px solid #707B7C;
+}
+/* banner */
+.ad__banner{
+    width: 100%; 
+    height: 10px;
+    background-color: black; 
+}
+/* new account page */
+.register-page{
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column; 
+    padding-bottom: 80px; 
+    padding-top: 30px; 
+}
+.register__form{
+    flex-direction: column; 
+    width: 50%;
+    margin: auto;
+    border: black 1px solid;  
+    justify-content: center;
+    align-items: center; 
+    padding-bottom: 80px; 
+}

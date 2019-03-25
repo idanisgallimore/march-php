@@ -9,7 +9,7 @@
         <ul class="navigation_links">
         <!-- add php code to loop through list of links -->
         <?php 
-            $links = array("search" => "search", "Home" => "main", "Women" => "women", "Men" => "men","Jewelry" =>"jewelry","Home Goods" => "homes" );
+            $links = array( "Home" => "main", "Women" => "women", "Men" => "men","Jewelry" =>"jewelry","Home Goods" => "homes" );
             foreach($links as $key => $value){
             echo  
             "<li class=\"navigation__item\">
@@ -21,7 +21,7 @@
     </div>
     <div class="navigation__box navigation__box--short">
             <div class="navigation__icons">
-                <a class="navigation__link navigation__link--small" href="#">Sign in/Register</a>
+                <a class="navigation__link navigation__link--small" href="index.php?page=loginPage">Sign in/Register</a>
                 <a class="navigation__link navigation__link--small" href="#"><i class="navigation_icon navigation__wishlist far fa-heart"></i></a>
                 <a class="navigation__link navigation__link--small" href="#"><i class="navigation_icon navigation_shopping-bag fas fa-shopping-bag"></i> Bag</a>
             </div>
