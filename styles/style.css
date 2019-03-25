@@ -1,0 +1,496 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata|Italiana');
+
+/* 
+These are the fonts that will be used:
+font-family: 'Inconsolata', monospace;
+font-family: 'Italiana', serif; */
+
+/* General styles */
+body{
+    font-family: 'Inconsolata', monospace;
+}
+.flex{
+    display: flex; 
+}
+/* Navigation bar */
+.nav-padding{
+    height: 120px; 
+    width: 100%;
+}
+.navigation{
+    display: flex;
+    flex-direction: row; 
+    height: 120px; 
+    background-color: white;
+    /* Fix the position issue later */
+    position: fixed; 
+    width: 100%;
+}
+.navigation__box{
+    display: flex; 
+    flex-direction: column; 
+}
+.navigation__box--short{
+    width: 20%;
+}
+.navigation__box--long{
+    width: 60%; 
+}
+.navigation__brand{
+    margin: auto;
+    margin-top: 10px; 
+    margin-bottom: 0;
+    padding: 0;  
+}
+.navigation__logo{
+    font-family: 'Italiana', serif;
+    letter-spacing: 5px; 
+    font-size: 22px; 
+}
+.navigation_links{
+    display: flex; 
+    flex-direction: row;
+    width: 75%; 
+    margin: auto; 
+}
+.navigation__item{
+    list-style: none; 
+    display: inline-block; 
+    width: 20%; 
+}
+.navigation__link{
+    text-decoration: none; 
+    color: black; 
+}
+.navigation__link--larger{
+    font-size: 16px; 
+    letter-spacing: 1px; 
+    text-align: center; 
+}
+.navigation__link:hover, .navigation__search-icon:hover {
+    color: #9E9E9E;
+    cursor: pointer;
+}
+.navigation__icons{
+    display: flex; 
+    margin: auto; 
+    margin-top: 10px; 
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.navigation__link--small{
+    font-size: 16px; 
+    margin: auto; 
+}
+.navigation__search-bar{
+    height: 50%;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end;
+    font-size: 20px; 
+    margin-bottom: 20px; 
+}
+.navigation__search-icon{
+    padding-right: 20px;  
+}
+/* message pages */
+.msg-container{
+    height: 500%; 
+}
+/* landing page */
+.jumbotron{
+    width: 100%; 
+    height: 550px; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    background-image: url("../images/landing/man.jpg");
+    background-size: cover; 
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+.jumbotron__content{
+    margin: auto;
+    background-color: white; 
+    height: 200px;
+    width: 700px; 
+    display: flex; 
+    align-items: center; 
+    flex-direction: column;
+    justify-content: center;
+    margin: auto; 
+}
+.jumbotron__text{
+    text-align: center; 
+    line-height: 30px; 
+    display: block; 
+}
+.jumbotron__link{
+    border-bottom: #9E9E9E solid 1px; 
+    color: #9E9E9E;
+    text-decoration: none; 
+    padding-bottom: 5px;  
+}
+/* Second part of the landing page */
+.landing-categories{
+    width: 100%; 
+    background-color: #F2F4F4;
+    padding-bottom: 90px; 
+}
+.landing__title{
+    font-size: 35px;  
+    text-align: center;
+    color: black;
+    font-weight: lighter; 
+    letter-spacing: 5px; 
+    padding-top: 60px; 
+    margin-top: 0; 
+    margin-bottom: 30px; 
+}
+.landing-categories__links{
+    width: 80%;
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap;
+    margin: auto;
+    /* justify-content: center;  */
+}
+.category__item{
+    width: 22%; 
+    height:300px; 
+    display: flex; 
+    margin: auto; 
+    flex-direction: column; 
+    justify-content: flex-start;
+}
+.category_item__link{
+    display: block;
+    width: 100%; 
+    height: 75%;
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.category_item__link:hover{
+    opacity: 0.5;
+    transition: .5s ease;
+}
+.category_item__link--men{
+    background-image: url("../images/landing/men.jpg");
+}
+.category_item__link--women{
+    background-image: url("../images/landing/women.jpg");
+}
+.category_item__link--homes{
+    background-image: url("../images/landing/homes.jpg");
+}
+.category_item__link--beauty{
+    background-image: url("../images/landing/beauty.jpg");
+}
+
+.category_item__link--sunglasses{
+    background-image: url("../images/landing/sunglasses.jpg");
+}
+.category_item__link--shoes{
+    background-image: url("../images/landing/shoes.jpg");
+}
+.category_item__link--watches{
+    background-image: url("../images/landing/watches.jpg");
+}
+.category_item__link--jewelry{
+    background-image: url("../images/landing/jewelry.jpg");
+}
+.category-name{
+    font-size: 20px; 
+    margin-top: 10px; 
+    letter-spacing: 3px; 
+}
+/* Landing section 3 */
+.landing-section3{
+    padding-top: 150px; 
+    width: 100%;
+    height: 800px; 
+    display: flex;
+    flex-direction: row; 
+}
+.landing-section3__1{
+    width: 60%; 
+}
+.landing-section3__2{
+    display: flex; 
+    width: 40%; 
+}
+.landing-section3__2{
+    flex-direction: column;
+}
+.landing-section3-pic2{
+    width: 90%; 
+    height: 350px; 
+    background-image: url("../images/landing/girl.jpg");
+}
+.landing-section3-pic2,.landing-section3-pic{
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.landing-section3-pic{
+    margin: auto;  
+    width: 80%; 
+    height: 80%;
+    background-image: url("../images/landing/flower.jpg");
+}
+.landing-section3__title{
+    font-size: 30px; 
+    text-align: left; 
+    margin: auto; 
+    margin-top: 60px; 
+    margin-bottom: 60px;
+    letter-spacing: 5px; 
+}
+/* Section 4 of landingpage */
+.landing-section4{
+    width: 100%; 
+    height: 530px; 
+    background-color: #F2F4F4;
+    padding-bottom: 90px; 
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    margin-bottom: 0;
+}
+.landing-section4__text{
+    margin: auto; 
+    text-align: center; 
+}
+.landing-section4__title{
+    padding-top: 50px; 
+    font-size: 30px; 
+    letter-spacing: 5px; 
+}
+.landing-section4__subtitle{
+    font-size: 20px; 
+    letter-spacing: 1px; 
+}
+.landing-section4__link{
+    font-size: 16px; 
+    text-decoration: none; 
+    display: inline-block;
+    border-bottom: solid 1px #9E9E9E;
+    color: #9E9E9E;
+    padding-bottom: 5px; 
+}
+.landing-section4__video{
+    width: 600px;
+    height: 400px; 
+    margin: auto; 
+    pointer-events: none;
+    margin-top: 0; 
+}
+/* landing - section 5 */
+.landing-section5{
+    height: 600px;
+    width: 100%;
+    margin-top: 0; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    background-image: url("../images/landing/1.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+}
+.landing-section5__content{
+    background-color: white;
+    height: 320px;
+    width: 180px; 
+}
+.landing-section5__text{
+    color: #707B7C;
+    font-size: 25px; 
+    text-align: center; 
+    letter-spacing: 3px; 
+    font-weight: lighter;
+}
+.landing-section5__subtext{
+    font-size: 16px; 
+    text-align: center;
+    color: #7F8C8D;
+    display: block;
+    width: 80%; 
+    margin: auto; 
+    font-style: italic;
+}
+.landing-section5__link{
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block;
+    margin-top: 30px; 
+    margin-left: 30px; 
+    color: black;
+}
+
+/* Landing- section 6 */
+.landing-section6{
+    flex-direction: column; 
+    height: 400px;
+    margin-top: 30px; 
+   
+}
+.landing-section6__action{
+    width: 100%; 
+    height: 300px;
+    border-bottom: 1px solid #B2BABB; 
+}
+.ls6__title{
+    font-size: 20px; 
+}
+.ls6__elist, .ls6__find-store{
+    width: 50%; 
+}
+.email-list__form, .ls6__elist{
+    flex-direction: column;
+}
+.ls6__elist{
+    justify-content: center;
+    align-items: center; 
+    border-right: 1px solid #B2BABB; 
+}
+.email-list__form{
+    width: 80%; 
+    height: 70%; 
+    align-items: center; 
+}
+.email-list__userin{
+    border: 0; 
+    width: 50%;
+    height: 50px; 
+    border-bottom: 1px solid black; 
+    color: black;
+    font-size: 16px; 
+    margin-bottom: 20px; 
+}
+.email-list__userin:focus{
+    outline: none; 
+    font-size: 20px; 
+}
+.ls6__find-store{
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+.ls6__image{
+    height: 200px;
+    width: 320px; 
+}
+.ls6__subtext{
+    text-decoration: none; 
+    color: black; 
+    font-size: 20px;
+    margin-top: 20px; 
+    padding-bottom: 5px;
+    border-bottom: 2px solid black; 
+    font-weight: bold; 
+}
+.ls6__subtext:hover{
+    cursor: pointer;
+}
+.landing-section6__social{
+    height: 100px; 
+    border-bottom: solid 1px black; 
+    align-items: center; 
+    justify-content: center; 
+}
+.landing-section6__social, .ls6__icons{
+    flex-direction: row; 
+}
+.ls6__icons{
+    /* border: red 1px solid;  */
+    height: 100%;
+    width: 30%; 
+    justify-content: center;
+    align-items: center; 
+}
+.ls6_icon{
+    background-color: black; 
+    color: white; 
+    display: inline-block; 
+    width: 50px; 
+    /* height: 50px;  */
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+    font-size: 20px; 
+    margin-right: 20px; 
+    text-align: center; 
+    border-radius: 50%; 
+}
+.ls6__title{
+    font-size: 25px; 
+}
+.ls6__title2{
+    font-size: 25px; 
+    letter-spacing: 5px; 
+}
+/* Button Styles */
+.landing-section3__buttons{
+    margin-left: 40px; 
+    margin-top: 30px; 
+}
+.btn{
+    display: block; 
+    text-decoration: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border: 0; 
+    background-color: none; 
+}
+.btn:hover{
+    cursor: pointer;
+    transition: .5s ease;
+}
+.btn-white{
+    border: 1px solid black;
+    color: black; 
+    background-color: white; 
+}
+.btn-white:hover{
+    color: white; 
+    background-color: black; 
+}
+.btn-black{
+    color: white; 
+    background-color: black; 
+}
+.btn-black:hover{
+    border: 1px solid black;
+    color: black; 
+    background-color: white; 
+}
+.btn-long{
+    width: 230px; 
+    height: 50px; 
+    font-size: 16px; 
+    letter-spacing: 3px; 
+}
+.btn-long1{
+    border-bottom: 0; 
+}
+/* footer */
+/* add animation */
+footer{
+    width: 100%; 
+    height: 40px; 
+    background-color: white; 
+    color: black; 
+    margin: 0; 
+}
+.footer-text{
+    text-align: center; 
+    font-size: 18px; 
+    letter-spacing: 3px; 
+}
+/* for test purposes */
