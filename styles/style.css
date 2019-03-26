@@ -557,7 +557,7 @@ footer{
 /* new account page */
 .register-page{
     width: 100%;
-    height: 500px;
+    height: 520px;
     justify-content: center;
     align-items: center; 
     flex-direction: column; 
@@ -572,4 +572,5 @@ footer{
     justify-content: center;
     align-items: center; 
     padding-bottom: 80px; 
+    margin-top: 20px; 
 }
