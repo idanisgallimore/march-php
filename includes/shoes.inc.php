@@ -1,11 +1,11 @@
 <div class="products flex">
-    <h1 class="page-title">HOME DECOR</h1>
+    <h1 class="page-title">SHOES</h1>
     <p class = "page-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
     <div class="product-page flex">
         <?php 
         include_once('library/connectToDb.php');
         $con = connectToDb();
-        $query = "SELECT * FROM products WHERE product_id = '3'";
+        $query = "SELECT * FROM products WHERE product_id = '6'";
         $result = mysqli_query($con, $query);
 
         while ($row = mysqli_fetch_assoc($result)) {
