@@ -24,7 +24,7 @@ body{
     background-color: white;
     /* Fix the position issue later */
     position: fixed; 
-    z-index: 1; 
+    z-index: 3; 
     width: 100%;
 }
 .navigation__box{
@@ -634,4 +634,60 @@ footer{
 } */
 .product-price{
     margin-top: 0; 
+}
+
+/* item pages */
+.item-container{
+    flex-direction: row; 
+    margin-top: 40px; 
+    height: 500px; 
+    width: 100%; 
+    padding-bottom: 100px;
+    border-bottom: black solid 1px; 
+}
+.item-picture{
+    flex-direction: column;
+    width: 60%; 
+    justify-content: center; 
+    align-items: center;
+}
+.item-info{
+    flex-direction: column;
+    width: 40%;
+    align-items: center;  
+}
+.item-pic{
+    height: 600px; 
+    width: 55%;
+}
+.item_icon{
+    font-size: 20px; 
+    color: black;
+    margin-bottom: 20px; 
+}
+.item_icon:hover{
+    color: #707B7C;
+    cursor: pointer; 
+}
+.item-title{
+    font-size: 30px; 
+    letter-spacing: 2px; 
+    text-align: center; 
+    margin-top: 80px; 
+    margin-bottom: 80px; 
+    line-height: 40px; 
+}
+.item-amount{
+    margin-bottom: 20px; 
+    color: #707B7C;
+}
+.item-form{
+    height: 200px; 
+}
+.dropdown{
+    margin-bottom: 40px; 
+    margin-right: 20px; 
+}
+.dropdown:focus{
+    outline: none; 
 }
