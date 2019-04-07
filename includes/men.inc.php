@@ -15,7 +15,7 @@
             $price = $row['price'];
             $fullPic = $pic . $id . ".jpg";
 
-            echo "<a href = \"index.php?page=item&id=$id\" class = \"product_container flex\">
+            echo "<a href = \"index.php?page=item&id=$id&cat=2\" class = \"product_container flex\">
                <img class = \"product_image\" src = \"$pic\">
                 <div class = \"product-text flex\">
                     <p class = \"product-title product\">$name</p>

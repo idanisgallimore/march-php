@@ -8,14 +8,14 @@
     $query = "SELECT * FROM products WHERE product_id = '$id'";
     $result = mysqli_query($con, $query);
 
-    while ($row = mysqli_fetch_assoc($result)) {
-        $product_name = $row['product_name'];
-        $description = $row['description'];
-        $picture = $row['picture'];
-        $price = $row['price'];
-        $quantity = $row['quantity'];
+    if ($cat == 8) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $product_name = $row['product_name'];
+            $description = $row['description'];
+            $picture = $row['picture'];
+            $price = $row['price'];
+            $quantity = $row['quantity'];
 
-        if ($cat === 8) {
             echo "<div class=\"item-picture flex\">
             <img class=\"item-pic\" src = \"$picture\">
         </div>
@@ -35,7 +35,15 @@
                 <button class=\"btn btn-long btn-black\">Add to cart</button>
             </form>
         </div>";
-        } else {
+        }
+    } else {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $product_name = $row['product_name'];
+            $description = $row['description'];
+            $picture = $row['picture'];
+            $price = $row['price'];
+            $quantity = $row['quantity'];
+
             echo "<div class=\"item-picture flex\">
             <img class=\"item-pic\" src = \"$picture\">
         </div>
@@ -63,6 +71,8 @@
         </div>";
         }
     }
+
+
 
     ?>
 </div>
