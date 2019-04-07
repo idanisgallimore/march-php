@@ -1,6 +1,7 @@
 <div class="item-container flex">
-    <?php 
+    <?php
     $id = $_REQUEST['id'];
+    $cat = $_REQUEST['cat'];
 
     include_once('library/connectToDb.php');
     $con = connectToDb();
@@ -14,7 +15,28 @@
         $price = $row['price'];
         $quantity = $row['quantity'];
 
-        echo "<div class=\"item-picture flex\">
+        if ($cat === 8) {
+            echo "<div class=\"item-picture flex\">
+            <img class=\"item-pic\" src = \"$picture\">
+        </div>
+        <div class = \"item-info flex\">
+            <h3 class = \"item-title\">$product_name <br> 
+            $$price</h3>
+            <i class=\"item_icon far fa-heart\">Add to wishlist</i>
+            <p class = \"item-amount\">Stock: $quantity left!</p>
+            <form class=\"item-form\" action = \"index.php\" method = \"GET\">
+                <label for=\"quantity\">Qty: </label>
+                <select class = \"dropdown\" name = \"size\">";
+            for ($i = 0; $i < 26; $i++) {
+                echo "<option class = \"options\" value = \"$i\">$i</option>";
+            };
+            echo "</select>
+                <input type = \"hidden\" name=\"page\" value=\"cart\">
+                <button class=\"btn btn-long btn-black\">Add to cart</button>
+            </form>
+        </div>";
+        } else {
+            echo "<div class=\"item-picture flex\">
             <img class=\"item-pic\" src = \"$picture\">
         </div>
         <div class = \"item-info flex\">
@@ -31,15 +53,16 @@
                 </select>
                 <label for=\"quantity\">Qty: </label>
                 <select class = \"dropdown\" name = \"size\">";
-        for ($i = 0; $i < 26; $i++) {
-            echo "<option class = \"options\" value = \"$i\">$i</option>";
-        };
-        echo "</select>
+            for ($i = 0; $i < 26; $i++) {
+                echo "<option class = \"options\" value = \"$i\">$i</option>";
+            };
+            echo "</select>
                 <input type = \"hidden\" name=\"page\" value=\"cart\">
                 <button class=\"btn btn-long btn-black\">Add to cart</button>
             </form>
         </div>";
+        }
     }
 
     ?>
-</div> 
+</div>

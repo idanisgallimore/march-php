@@ -602,10 +602,11 @@ footer{
     flex-direction: row;
     width: 100%; 
     background-color: #F2F4F4;
+    flex-wrap: wrap;
 }
 .product_container{
     flex-direction: column;
-    width: 25%; 
+    width: 24.71%; 
     height: 550px; 
     display: block; 
     text-decoration: none; 
