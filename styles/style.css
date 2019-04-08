@@ -692,3 +692,7 @@ footer{
 .dropdown:focus{
     outline: none; 
 }
+/* Wishlist */
+.wishlist{
+    flex-direction: column; 
+}
