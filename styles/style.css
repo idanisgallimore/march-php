@@ -695,4 +695,53 @@ footer{
 /* Wishlist */
 .wishlist{
     flex-direction: column; 
+    width: 100%; 
+}
+.wish-items{
+    width: 80%;
+    margin: auto; 
+    /* background-color: #B2BABB; */
+    flex-direction: row;
+}
+.wl-item{
+    border-bottom: solid 1px #7F8C8D;
+    padding-bottom: 40px; 
+    margin-bottom: 30px; 
+    width: 100%; 
+    height: 330px;
+}
+.wl-image, .wl-action{
+    width: 25%; 
+    height: 100%; 
+}
+.wl-details{
+    width: 50%; 
+}
+.wl-action{
+    flex-direction: column;
+}
+.wl-details, .wl-action{
+    justify-content: center; 
+    align-items: center;
+}
+.wl_pic{
+    width: 88%;
+    height: 100%;
+    margin-left: 15px; 
+}
+.wl-title{
+    font-size: 20px; 
+    text-align: center; 
+}
+.wl-link{
+    font-size: 16px; 
+    margin-top: 10px; 
+    text-decoration: none; 
+    color: black;
+}
+.wl-link:hover{
+    color: #7F8C8D;
+}
+.wl-dropdown{
+    margin-bottom: 20px; 
 }

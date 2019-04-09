@@ -24,39 +24,40 @@
                 $quantity = $row['quantity'];
 
                 if ($quantity == 0) {
-                    echo "
+                    echo "<div class=\"wl-item flex\">
                     <div class=\"wl-image\">
-                        <img class = \"product_image\" src = \"$pic\">
+                        <img class = \"wl_pic\" src = \"$pic\">
                     </div>
-                    <div class=\"wl-details\">
-                        <p class = \"product-title product\">$name <br> $price</p>
+                    <div class=\"wl-details flex\">
+                        <p class = \"wl-title\">$name <br> $price</p>
                     </div>
-                    <div class=\"wl-action\">
+                    <div class=\"wl-action flex\">
                         <p class=\"wl-msg\">Sold Out</p>
                         <button class=\"btn btn-long btn-white\">Notify Me</button>
                     </div>
-                ";
+                </div>";
                 }else{
-                    echo "
+                    echo "<div class=\"wl-item flex\">
                     <div class=\"wl-image\">
-                        <img class = \"product_image\" src = \"$pic\">
+                        <img class = \"wl_pic\" src = \"$pic\">
                     </div>
-                    <div class=\"wl-details\">
-                        <p class = \"product-title product\">$name <br> $price</p>
+                    <div class=\"wl-details flex\">
+                        <p class = \"wl-title product\">$name <br> $price</p>
                     </div>
-                    <div class=\"wl-action\">
-                    <form class=\"item-form\" action = \"index.php\" method = \"GET\">
+                    <div class=\"wl-action flex\">
+                    <form class=\"wl-form\" action = \"index.php\" method = \"GET\">
                         <label for=\"quantity\">Qty: </label>
-                        <select class = \"dropdown\" name = \"size\">";
+                        <select class = \"wl-dropdown\" name = \"size\">";
                         for ($i = 0; $i < 26; $i++) {
-                            echo "<option class = \"options\" value = \"$i\">$i</option>";
+                            echo "<option class = \"wl-options\" value = \"$i\">$i</option>";
                         };
                         echo "</select>
                         <input type = \"hidden\" name=\"page\" value=\"cart\">
                         <button class=\"btn btn-long btn-black\">Add to cart</button>
                     </form>
+                        <a href=\"#\" class=\"wl-link\">Remove</a>
                     </div>
-                ";
+                </div>";
                 }
             }
         }
