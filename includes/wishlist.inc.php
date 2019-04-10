@@ -34,6 +34,7 @@
                     <div class=\"wl-action flex\">
                         <p class=\"wl-msg\">Sold Out</p>
                         <button class=\"btn btn-long btn-white\">Notify Me</button>
+                        <a href=\"index.php?page=removeFromWL&id=$id\" class=\"wl-link\">Remove</a>
                     </div>
                 </div>";
                 }else{
@@ -55,7 +56,7 @@
                         <input type = \"hidden\" name=\"page\" value=\"cart\">
                         <button class=\"btn btn-long btn-black\">Add to cart</button>
                     </form>
-                        <a href=\"#\" class=\"wl-link\">Remove</a>
+                        <a href=\"index.php?page=removeFromWL&id=$id\" class=\"wl-link\">Remove</a>
                     </div>
                 </div>";
                 }
