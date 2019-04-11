@@ -8,9 +8,11 @@
     $query = "SELECT * FROM products WHERE product_id = '$id'";
     $result = mysqli_query($con, $query);
 
+    // Change this to reflect other categories
     if ($cat == 8) {
         while ($row = mysqli_fetch_assoc($result)) {
             $product_name = $row['product_name'];
+            $id = $row['product_id'];
             $description = $row['description'];
             $picture = $row['picture'];
             $price = $row['price'];
@@ -26,12 +28,14 @@
             <p class = \"item-amount\">Stock: $quantity left!</p>
             <form class=\"item-form\" action = \"index.php\" method = \"GET\">
                 <label for=\"quantity\">Qty: </label>
-                <select class = \"dropdown\" name = \"size\">";
+                <select class = \"dropdown\" name = \"quantity\">";
             for ($i = 0; $i < 26; $i++) {
                 echo "<option class = \"options\" value = \"$i\">$i</option>";
             };
             echo "</select>
-                <input type = \"hidden\" name=\"page\" value=\"cart\">
+                <input type = \"hidden\" name=\"page\" value=\"addtocart\">
+                <input type = \"hidden\" name=\"id\" value=\"$id\">
+                <input type = \"hidden\" name=\"size\" value=\"null\">
                 <button class=\"btn btn-long btn-black\">Add to cart</button>
             </form>
         </div>";
@@ -39,6 +43,7 @@
     } else {
         while ($row = mysqli_fetch_assoc($result)) {
             $product_name = $row['product_name'];
+            $id = $row['product_id'];
             $description = $row['description'];
             $picture = $row['picture'];
             $price = $row['price'];
@@ -60,12 +65,13 @@
                     <option class = \"options\" value = \"large\">Large</option>
                 </select>
                 <label for=\"quantity\">Qty: </label>
-                <select class = \"dropdown\" name = \"size\">";
+                <select class = \"dropdown\" name = \"quantity\">";
             for ($i = 0; $i < 26; $i++) {
                 echo "<option class = \"options\" value = \"$i\">$i</option>";
             };
             echo "</select>
-                <input type = \"hidden\" name=\"page\" value=\"cart\">
+                <input type = \"hidden\" name=\"page\" value=\"addtocart\">
+                <input type = \"hidden\" name=\"id\" value=\"$id\">
                 <button class=\"btn btn-long btn-black\">Add to cart</button>
             </form>
         </div>";
