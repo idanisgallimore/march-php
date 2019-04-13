@@ -23,3 +23,31 @@
                 <button class=\"btn btn-long btn-black\">Add to cart</button>
             </form>
         </div>";
+
+
+        shopping cart 
+
+        
+if ($qty > $stock || $stock == 0) {
+    echo "<div class=\"flex msg-container fail-msg-container\">
+    <h2 class =\"fail-msg msg\">There are only $stock left in stock. Please change quantity.</h2>
+    <a href=\"javascript:history.go(-1)\" class=\"page-link\">Go back</a>
+    </div>";
+} else if ($qty == 0) {
+    echo "<div class=\"flex msg-container fail-msg-container\">
+    <h2 class =\"fail-msg msg\">Please, choose a quantity.</h2>
+    <a href=\"javascript:history.go(-1)\" class=\"page-link\">Go back</a>
+    </div>";
+} else {
+    if (isset($_SESSION['cart'][$id])) {
+            $_SESSION['cart'][$id] += $qty;
+        } else {
+            $_SESSION['cart'][$id] = $qty;
+        }
+
+        echo "<div class=\"flex msg-container fail-msg-container\">
+        <h2 class =\"fail-msg msg\">Product added to cart</h2>
+        <a href=\"javascript:history.go(-1)\" class=\"page-link\">Keep shopping</a>
+        </div>";
+    // var_dump($_SESSION["cart"]);
+}

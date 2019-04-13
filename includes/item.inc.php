@@ -26,18 +26,17 @@
             $$price</h3>
             <i class=\"item_icon far fa-heart\">Add to wishlist</i>
             <p class = \"item-amount\">Stock: $quantity left!</p>
-            <form class=\"item-form\" action = \"index.php\" method = \"GET\">
+            <div class=\"item-form\">
                 <label for=\"quantity\">Qty: </label>
                 <select class = \"dropdown\" name = \"quantity\">";
             for ($i = 0; $i < 26; $i++) {
                 echo "<option class = \"options\" value = \"$i\">$i</option>";
             };
             echo "</select>
-                <input type = \"hidden\" name=\"page\" value=\"addtocart\">
                 <input type = \"hidden\" name=\"id\" value=\"$id\">
                 <input type = \"hidden\" name=\"size\" value=\"null\">
-                <button class=\"btn btn-long btn-black\">Add to cart</button>
-            </form>
+                <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
+            </div>
         </div>";
         }
     } else {
@@ -57,7 +56,7 @@
             $$price</h3>
             <i class=\"item_icon far fa-heart\">Add to wishlist</i>
             <p class = \"item-amount\">Stock: $quantity left!</p>
-            <form class=\"item-form\" action = \"index.php\" method = \"GET\">
+            <div class=\"item-form\">
                 <label for=\"size\">Size: </label>
                 <select class = \"dropdown\" name = \"size\">
                     <option class = \"options\" value = \"small\">Small</option>
@@ -70,10 +69,9 @@
                 echo "<option class = \"options\" value = \"$i\">$i</option>";
             };
             echo "</select>
-                <input type = \"hidden\" name=\"page\" value=\"addtocart\">
                 <input type = \"hidden\" name=\"id\" value=\"$id\">
-                <button class=\"btn btn-long btn-black\">Add to cart</button>
-            </form>
+                <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
+            </div>
         </div>";
         }
     }
