@@ -1,13 +1,15 @@
+// message box
+var msg = document.querySelector(".message-box");
+
 // GRAB ITEMS FROM URL VARIABLES
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
 };
 // add items to wishlist 
 var productId = getQueryVariable("id");
@@ -21,7 +23,7 @@ icon.addEventListener("click", function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log("request sent");
             // document.querySelector(".test").innerHTML = this.responseText;
-            icon.style.color  = "#707B7C";
+            icon.style.color = "#707B7C";
             icon.textContent = this.responseText;
             console.log(this.responseText);
         }
@@ -33,20 +35,40 @@ icon.addEventListener("click", function () {
 
 // Add items to shopping cart 
 var btnSub = document.querySelector(".btn-sub");
-var qty = getQueryVariable("quantity");
-var size = getQueryVariable("size");
+var size = document.querySelector(".size").value;
+var qty = document.querySelector(".qty");
+var msgTxt = document.querySelector(".ms-text");
+
 // var productId = getQueryVariable("id");
-btnSub.addEventListener("click", function(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log("request sent");
-            // document.querySelector(".test").innerHTML = this.responseText;
-            
-            console.log(this.responseText);
-        }
-    };
-    xhttp.open("POST", "./includes/addtocart.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send(`id=${productId}&quantity=${qty}&size=${size}`);
+btnSub.addEventListener("click", function () {
+    var qtyValue = parseInt(qty.value, 10);
+    if(qtyValue == 0 || isNaN(qtyValue)){
+        msgTxt.textContent = "Choose a quantity";
+        msg.style.display = "block";
+        console.log("choose a quantity please");
+    }else{
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("request sent");
+                // document.querySelector(".test").innerHTML = this.responseText;
+                msgTxt.textContent = this.responseText;
+                msg.style.display = "block";
+                console.log(this.responseText);
+            }
+        };
+        xhttp.open("POST", "./includes/addtocart.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(`id=${productId}&quantity=${qtyValue}&size=${size}`);
+    }
+    
+
 }); 
+
+msg.addEventListener("click", function (){
+    if(msg.style.display == "block"){
+        msg.style.display = "none";
+    }else{
+        msg.style.display = "block";
+    }
+});

@@ -12,6 +12,9 @@ body{
 .flex{
     display: flex; 
 }
+.btn:focus, input:focus, textarea:focus{
+    outline: none; 
+}
 /* Navigation bar */
 .nav-padding{
     height: 120px; 
@@ -744,4 +747,38 @@ footer{
 }
 .wl-dropdown{
     margin-bottom: 20px; 
+}
+/* item page cart stuff */
+.qty{
+    width: 60px; 
+    margin-bottom: 10px; 
+}
+/* message box for website */
+.message-box{
+    text-align: center;
+    position: fixed; 
+    top: 240px; 
+    left: 530px; 
+    background-color: #9E9E9E;
+    color: white; 
+    width: 450px; 
+    height: 200px;
+    z-index: 5; 
+    opacity: 0.9; 
+    display: none; 
+    transition: .5s ease;
+}
+.ms-icon{
+    position: relative; 
+    left: 200px; 
+    top: 8px;
+    font-size: 20px; 
+}
+.ms-icon:hover{
+    cursor: pointer;
+}
+.ms-text{
+    font-size: 35px; 
+    text-align: center; 
+    letter-spacing: 1px; 
 }

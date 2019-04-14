@@ -13,10 +13,16 @@
 </head>
 
 <body>
-    <?php 
+    <?php
     include("components/nav.php");
     ?>
     <div class="nav-padding"></div>
+
+    <div class="message-box">
+        <i class="ms-icon fas fa-times"></i>
+        <p class="ms-text">dghdhg</p>
+    </div>
+
     <?php
     if (!isset($_REQUEST['page'])) {
         include("includes/main.inc.php");
@@ -26,11 +32,11 @@
         include($nextPage);
     }
     ?>
-    <?php 
+    <?php
     include("components/footer.php");
     ?>
     <!-- Script for javascript -->
     <script src="scripts/script.js"></script>
 </body>
 
-</html> 
+</html>

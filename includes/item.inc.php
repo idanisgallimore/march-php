@@ -28,13 +28,9 @@
             <p class = \"item-amount\">Stock: $quantity left!</p>
             <div class=\"item-form\">
                 <label for=\"quantity\">Qty: </label>
-                <select class = \"dropdown\" name = \"quantity\">";
-            for ($i = 0; $i < 26; $i++) {
-                echo "<option class = \"options\" value = \"$i\">$i</option>";
-            };
-            echo "</select>
+                <input class=\"qty\" type=\"text\" name=\"qty\">
                 <input type = \"hidden\" name=\"id\" value=\"$id\">
-                <input type = \"hidden\" name=\"size\" value=\"null\">
+                <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
                 <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
             </div>
         </div>";
@@ -58,18 +54,14 @@
             <p class = \"item-amount\">Stock: $quantity left!</p>
             <div class=\"item-form\">
                 <label for=\"size\">Size: </label>
-                <select class = \"dropdown\" name = \"size\">
+                <select class = \"size dropdown\" name = \"size\">
                     <option class = \"options\" value = \"small\">Small</option>
                     <option class = \"options\" value = \"medium\">Medium</option>
                     <option class = \"options\" value = \"large\">Large</option>
                 </select>
                 <label for=\"quantity\">Qty: </label>
-                <select class = \"dropdown\" name = \"quantity\">";
-            for ($i = 0; $i < 26; $i++) {
-                echo "<option class = \"options\" value = \"$i\">$i</option>";
-            };
-            echo "</select>
-                <input type = \"hidden\" name=\"id\" value=\"$id\">
+                <input class=\"qty\" type=\"text\" name=\"qty\">
+                <input class=\"hidden\" type = \"hidden\" name=\"id\" value=\"$id\">
                 <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
             </div>
         </div>";
