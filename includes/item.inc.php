@@ -31,7 +31,7 @@
                 <input class=\"qty\" type=\"text\" name=\"qty\">
                 <input type = \"hidden\" name=\"id\" value=\"$id\">
                 <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
-                <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
+                <button class=\"btn-test btn btn-long btn-black\">Add to cart</button>
             </div>
         </div>";
         }
@@ -49,7 +49,7 @@
         </div>
         <div class = \"item-info flex\">
             <h3 class = \"item-title\">$product_name <br> 
-            $$price</h3>
+            $$price</h3> 
             <i class=\"item_icon far fa-heart\">Add to wishlist</i>
             <p class = \"item-amount\">Stock: $quantity left!</p>
             <div class=\"item-form\">

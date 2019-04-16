@@ -1,4 +1,5 @@
 <?php
+
 $id = $_REQUEST['id'];
 $qty = $_REQUEST['quantity'];
 $size = $_REQUEST['size'];
@@ -19,7 +20,9 @@ if ($stock > $qty && $stock !== 0) {
         } else {
             $_SESSION['cart'][$id] = $qty;
         }
-        echo "Product added to cart";
+        // echo "Product added to cart";
+        print_r($_SESSION['cart']);
+        
     }else if($qty > $stock){
         echo "There are only $stock available";
     }

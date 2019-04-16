@@ -34,7 +34,7 @@
                             <img class = \"wl_pic\" src = \"$pic\">
                         </div>
                         <div class=\"wl-details flex\">
-                            <p class = \"wl-title\">$name <br> $price</p>
+                            <p class = \"wl-title\">$name <br> $$price</p>
                         </div>
                         <div class=\"wl-action flex\">
                             <p class=\"wl-msg\">Sold Out</p>
@@ -49,19 +49,15 @@
                             <img class = \"wl_pic\" src = \"$pic\">
                         </div>
                         <div class=\"wl-details flex\">
-                            <p class = \"wl-title product\">$name <br> $price</p>
+                            <p class = \"wl-title product\">$name <br> $$price</p>
                         </div>
                         <div class=\"wl-action flex\">
-                        <form class=\"wl-form\" action = \"index.php\" method = \"GET\">
                             <label for=\"quantity\">Qty: </label>
-                            <select class = \"wl-dropdown\" name = \"quantity\">";
-                            for ($i = 0; $i < 26; $i++) {
-                                echo "<option class = \"wl-options\" value = \"$i\">$i</option>";
-                            };
-                            echo "</select>
-                            <input type = \"hidden\" name=\"page\" value=\"addtocart\">
-                            <button class=\"btn btn-long btn-black\">Add to cart</button>
-                        </form>
+                            <input class=\"qty\" type=\"text\" name=\"qty\">
+                            <input type = \"hidden\" name=\"id\" value=\"$id\">
+                            <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
+                            <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
+
                             <a href=\"index.php?page=removeFromWL&id=$id\" class=\"wl-link\">Remove</a>
                         </div>
                     </div>";
