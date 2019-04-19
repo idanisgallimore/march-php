@@ -3,6 +3,9 @@
 $id = $_REQUEST['id'];
 $qty = $_REQUEST['quantity'];
 $size = $_REQUEST['size'];
+
+$_SESSION["test"] = "Hello Miami";
+echo $_SESSION["test"]; 
 // connect to db 
 include_once('../library/connectToDb.php');
 $con = connectToDb();
@@ -14,19 +17,25 @@ $row = mysqli_fetch_assoc($result);
 $stock = $row['quantity'];
 $name = $row['product_name'];
 
-if ($stock > $qty && $stock !== 0) {
-        if (isset($_SESSION['cart'][$id])) {
-            $_SESSION['cart'][$id] += $qty;
-        } else {
-            $_SESSION['cart'][$id] = $qty;
-        }
-        // echo "Product added to cart";
-        print_r($_SESSION['cart']);
+// if (isset($_SESSION['cart'][$id])) {
+//     $_SESSION['cart'][$id] += $qty;
+//     echo "added";
+// } else {
+//     $_SESSION['cart'][$id] = $qty;
+//     echo "not added";
+// }
+// if ($stock > $qty && $stock !== 0) {
+//         if (isset($_SESSION['cart'][$id])) {
+//             $_SESSION['cart'][$id] += $qty;
+//         } else {
+//             $_SESSION['cart'][$id] = $qty;
+//         }
+//         echo "Product added to cart";
         
-    }else if($qty > $stock){
-        echo "There are only $stock available";
-    }
-    else{
-        echo "Could not add product to cart";
-    }
+//     }else if($qty > $stock){
+//         echo "There are only $stock available";
+//     }
+//     else{
+//         echo "Could not add product to cart";
+//     }
 ?>

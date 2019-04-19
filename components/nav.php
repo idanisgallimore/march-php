@@ -23,7 +23,15 @@
             <div class="navigation__icons">
                 <a class="navigation__link navigation__link--small" href="index.php?page=loginPage">Sign in/Register</a>
                 <a class="navigation__link navigation__link--small" href="index.php?page=wishlist"><i class="navigation_icon navigation__wishlist far fa-heart"></i></a>
-                <a class="navigation__link navigation__link--small" href="index.php?page=cart"><i class="navigation_icon navigation_shopping-bag fas fa-shopping-bag"></i> Bag</a>
+                <a class="navigation__link navigation__link--small" href="index.php?page=cart"><i class="navigation_icon navigation_shopping-bag fas fa-shopping-bag"></i>
+                    <?php 
+                        if(isset($_SESSION['cart'])){
+                            echo count($_SESSION['cart']);
+                        }else{
+                            echo 0; 
+                        }
+                    ?>
+                </a>
             </div>
             <div class="navigation__search-bar">
                 <i class="navigation__search-icon fas fa-search"></i>

@@ -52,12 +52,14 @@
                             <p class = \"wl-title product\">$name <br> $$price</p>
                         </div>
                         <div class=\"wl-action flex\">
-                            <label for=\"quantity\">Qty: </label>
-                            <input class=\"qty\" type=\"text\" name=\"qty\">
-                            <input type = \"hidden\" name=\"id\" value=\"$id\">
-                            <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
-                            <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
-
+                        <form action=\"index.php\" method=\"post\">
+                        <label for=\"quantity\">Qty: </label>
+                        <input class=\"qty\" value=\"1\" type=\"text\" name=\"qty\">
+                        <input type = \"hidden\" name=\"id\" value=\"$id\">
+                        <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
+                        <button class=\" btn btn-long btn-black\">Add to cart</button>
+                        <input type = \"hidden\" name=\"page\" value=\"test\">
+                        </form>
                             <a href=\"index.php?page=removeFromWL&id=$id\" class=\"wl-link\">Remove</a>
                         </div>
                     </div>";

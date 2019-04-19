@@ -28,7 +28,7 @@
             <p class = \"item-amount\">Stock: $quantity left!</p>
             <div class=\"item-form\">
                 <label for=\"quantity\">Qty: </label>
-                <input class=\"qty\" type=\"text\" name=\"qty\">
+                <input class=\"qty\" type=\"text\" name=\"qty\" value=\"1\">
                 <input type = \"hidden\" name=\"id\" value=\"$id\">
                 <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
                 <button class=\"btn-test btn btn-long btn-black\">Add to cart</button>
