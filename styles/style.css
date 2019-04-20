@@ -782,3 +782,8 @@ footer{
     text-align: center; 
     letter-spacing: 1px; 
 }
+/* shopping cart page */
+.cart-img{
+    height: 100px; 
+    width: 100px; 
+}
