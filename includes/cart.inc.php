@@ -41,11 +41,22 @@
                                             <h3 class=\"cart-name \">$name</h3>
                                         </div>
                                         <h4 class=\"cart-title pro\"> $$price</h4>
-                                        <h4 class=\"cart-title pro\"> $qty</h4>
-                                        <h4 class=\"cart-title pro\"> $$total</h4>
+                                        <div class=\"pro\">
+                                            <select class=\"cart-select\" name =\"qty\" value=\"$qty\">";
+                                                for($i = 0; $i < 100; $i ++){
+                                                    if($i == $qty){
+                                                        echo "<option value=\"$i\" selected>$i</option>";
+                                                    }else{
+                                                        echo "<option value = \"$i\" >$i</option>";
+                                                    }
+                                                }
+                                        
+                                       echo "</select>
+                                            </div>
+                                            <h4 class=\"cart-title pro\"> $$total</h4>
                                         </div>
                                         <div class=\"link\">
-                                            <a class=\"remove-link\" href=\"index.php?page=unset&id=$id\">Remove</a>
+                                            <a class=\"remove-link\" href=\"index.php?page=unset&id=$id\">Remove from cart</a>
                                         </div>
                                         ";
                         }
@@ -56,6 +67,14 @@
         </div>
         <div class="cart-sec2 flex">
             <!-- Second half of page -->
+            <h3 class="sum-title">Order Summary:</h3>
+            <?php 
+                if(isset($_SESSION['cart'])){
+                    
+                }
+            
+            
+            ?>
         </div>
     </div>
 </div>

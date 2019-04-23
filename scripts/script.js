@@ -69,7 +69,7 @@ if (btnSub !== null) {
 
 
     });
-}else{
+}else if(btnSub == null){
     console.log("ignore me");
 }
 
@@ -110,3 +110,10 @@ test.forEach(function(element){
 
     });
 });
+
+// shopping cart update stuff 
+var select = document.querySelector(".cart-select");
+select.addEventListener("onchange", function(){
+    console.log(select.value);
+});
+console.log("idanis says hi");
