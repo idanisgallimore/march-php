@@ -358,6 +358,7 @@ body{
     flex-direction: column; 
     height: 400px;
     margin-top: 30px; 
+    /* width: 100%;  */
    
 }
 .landing-section6__action{
@@ -783,6 +784,10 @@ footer{
     letter-spacing: 1px; 
 }
 /* shopping cart page */
+.cart{
+    width: 100%;
+    margin-bottom: 100px; 
+}
 .cart-img{
     height: 200px; 
     width: 150px; 
@@ -803,7 +808,9 @@ footer{
     width: 70%; 
 }
 .cart-sec2{
-    width: 30%; 
+    border: 1px solid pink; 
+    width: 20%; 
+    height: 500px; 
 }
 .cart-product{
     height: 230px; 

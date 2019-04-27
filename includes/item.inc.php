@@ -27,13 +27,16 @@
             <i class=\"item_icon far fa-heart\">Add to wishlist</i>
             <p class = \"item-amount\">Stock: $quantity left!</p>
             <div class=\"item-form\">
-                <label for=\"quantity\">Qty: </label>
-                <input class=\"qty\" type=\"text\" name=\"qty\" value=\"1\">
-                <input type = \"hidden\" name=\"id\" value=\"$id\">
-                <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
-                <button class=\"btn-test btn btn-long btn-black\">Add to cart</button>
+                <form action=\"index.php\" method=\"post\">
+                    <label for=\"quantity\">Qty: </label>
+                    <input class=\"qty\" type=\"text\" name=\"qty\" value=\"1\">
+                    <input type = \"hidden\" name=\"id\" value=\"$id\">
+                    <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
+                    <input type = \"hidden\" name=\"page\" value=\"test\">
+                    <button class=\"btn-test btn btn-long btn-black\">Add to cart</button>
+                </form>
             </div>
-        </div>";
+            </div>";
         }
     } else {
         while ($row = mysqli_fetch_assoc($result)) {
@@ -45,24 +48,27 @@
             $quantity = $row['quantity'];
 
             echo "<div class=\"item-picture flex\">
-            <img class=\"item-pic\" src = \"$picture\">
-        </div>
-        <div class = \"item-info flex\">
-            <h3 class = \"item-title\">$product_name <br> 
-            $$price</h3> 
-            <i class=\"item_icon far fa-heart\">Add to wishlist</i>
-            <p class = \"item-amount\">Stock: $quantity left!</p>
-            <div class=\"item-form\">
-                <label for=\"size\">Size: </label>
-                <select class = \"size dropdown\" name = \"size\">
-                    <option class = \"options\" value = \"small\">Small</option>
-                    <option class = \"options\" value = \"medium\">Medium</option>
-                    <option class = \"options\" value = \"large\">Large</option>
-                </select>
-                <label for=\"quantity\">Qty: </label>
-                <input class=\"qty\" type=\"text\" name=\"qty\">
-                <input class=\"hidden\" type = \"hidden\" name=\"id\" value=\"$id\">
-                <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
+                    <img class=\"item-pic\" src = \"$picture\">
+                    </div>
+                    <div class = \"item-info flex\">
+                    <h3 class = \"item-title\">$product_name <br> 
+                    $$price</h3> 
+                    <i class=\"item_icon far fa-heart\">Add to wishlist</i>
+                    <p class = \"item-amount\">Stock: $quantity left!</p>
+                    <div class=\"item-form\">
+                        <form action=\"index.php\" method=\"post\">
+                        <label for=\"size\">Size: </label>
+                        <select class = \"size dropdown\" name = \"size\">
+                            <option class = \"options\" value = \"small\">Small</option>
+                            <option class = \"options\" value = \"medium\">Medium</option>
+                            <option class = \"options\" value = \"large\">Large</option>
+                        </select>
+                        <label for=\"quantity\">Qty: </label>
+                        <input class=\"qty\" type=\"text\" name=\"qty\"  value=\"1\">
+                        <input class=\"hidden\" type = \"hidden\" name=\"id\" value=\"$id\">
+                        <input type = \"hidden\" name=\"page\" value=\"test\">
+                        <button class=\"btn-sub btn btn-long btn-black\">Add to cart</button>
+                        </form>
             </div>
         </div>";
         }

@@ -1,0 +1,31 @@
+<div class="cart-sec2 flex">
+            <h3 class="sum-title">Order Summary:</h3>
+            <?php 
+                
+                if(isset($_SESSION['cart'])){
+                    $query = "SELECT * FROM products WHERE product_id = '$id'";
+                    $result = mysqli_query($con, $query);
+                        $row = mysqli_fetch_assoc($result);
+                        $id = $row["product_id"];
+                        $price = $row['price'];
+
+                        $qty = $_SESSION['cart'][$id]; 
+                        $subTotal = $qty * $price;
+                        return $subTotal;  
+
+                }
+                echo $subTotal; 
+            ?>
+        </div>
+
+        *for adding to cart 
+                    <div class=\"wl-action flex\">
+                        <form action=\"index.php\" method=\"post\">
+                        <label for=\"quantity\">Qty: </label>
+                        <input class=\"qty\" value=\"1\" type=\"text\" name=\"qty\">
+                        <input type = \"hidden\" name=\"id\" value=\"$id\">
+                        <input class = \"size\" type = \"hidden\" name=\"size\" value=\"null\">
+                        <button class=\" btn btn-long btn-black\">Add to cart</button>
+                        <input type = \"hidden\" name=\"page\" value=\"test\">
+                        </form>
+                    </div>

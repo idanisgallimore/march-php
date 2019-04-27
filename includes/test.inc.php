@@ -10,37 +10,21 @@
    $size = $_REQUEST['size'];
    if(!isset($_SESSION['cart'][$id])){
     $_SESSION['cart'][$id] = $qty;
-   }else{
-    $_SESSION['cart'][$id] += $qty; 
+    // redirect 
+    header("location: index.php?page=cart");
+    die();
+    // echo "<div class=\"flex msg-container fail-msg-container\">
+    //     <h2 class =\"fail-msg msg\">Product added to cart.</h2>
+    //     <a href=\"javascript:history.go(-1)\" class=\"page-link\">Go back</a>
+    // </div>";
+}else{
+    $_SESSION['cart'][$id] = $qty; 
+    header("location: index.php?page=cart");
+    die();
+    // echo "<div class=\"flex msg-container fail-msg-container\">
+    //     <h2 class =\"fail-msg msg\">Product updated in cart.</h2>
+    //     <a href=\"javascript:history.go(-1)\" class=\"page-link\">Go back</a>
+    // </div>";
    }
-   
-//    $query = "SELECT quantity, product_name from products where product_id = '$id' ";
-//    $result = mysqli_query($con, $query);
-//    $row = mysqli_fetch_assoc($result);
-   
-//    $stock = $row['quantity'];
-//    $name = $row['product_name'];
-   
-//    if (isset($_SESSION['cart'][$id])) {
-//        $_SESSION['cart'][$id] += $qty;
-//        echo "added";
-//    } else {
-//        $_SESSION['cart'][$id] = $qty;
-//        echo "added";
-//    }
-//    if ($stock > $qty && $stock !== 0) {
-//            if (isset($_SESSION['cart'][$id])) {
-//                $_SESSION['cart'][$id] += $qty;
-//            } else {
-//                $_SESSION['cart'][$id] = $qty;
-//            }
-//            echo "Product added to cart";
-           
-//        }else if($qty > $stock){
-//            echo "There are only $stock available";
-//        }
-//        else{
-//            echo "Could not add product to cart";
-//        }
 
 ?>
