@@ -11,6 +11,7 @@
             <?php
             include_once('library/connectToDb.php');
             $con = connectToDb();
+            $sub_total = 0;
 
             $cart = $_SESSION['cart'];
             if (!isset($_SESSION['cart'])) {
@@ -24,7 +25,6 @@
                     <h2 class =\"fail-msg msg\">Shopping cart is empty.</h2>
                     </div>";
                 } else {
-                    $total2 = 0;
                     foreach ($_SESSION["cart"] as $id => $qty) {
                         $query = "SELECT * FROM products WHERE product_id = '$id'";
                         $result = mysqli_query($con, $query);
@@ -34,55 +34,62 @@
                             $name = $row["product_name"];
                             $price = $row['price'];
                             $stock = $row['quantity'];
+                            $total = $price * $qty;
+                            
+                            $sub_total += $total;
+                            
                             if ($stock == 0) {
                                 echo "<div class=\"cart-product flex\">
-                                        <div class=\"img-cont flex\">
-                                            <img class=\"cart-img\" src=\"$pic\">
-                                            <h3 class=\"cart-name \">$name</h3>
-                                        </div>
-                                        <h4 class=\"cart-title pro\"> $$price</h4>
-                                        <div class=\"pro\">
-                                           <p class=\"pro-msg\">Out of Stock</p>
-                                        </div>
-                                            <h4 class=\"cart-title pro\"> $$total</h4>
-                                        </div>
-                                        <div class=\"link\">
-                                            <a class=\"remove-link\" href=\"index.php?page=unset&id=$id\">Remove from cart</a>
-                                        </div> 
-                                        ";
+                                <div class=\"img-cont flex\">
+                                <img class=\"cart-img\" src=\"$pic\">
+                                <h3 class=\"cart-name \">$name</h3>
+                                </div>
+                                <h4 class=\"cart-title pro\"> $$price</h4>
+                                <div class=\"pro\">
+                                <p class=\"pro-msg\">Out of Stock</p>
+                                </div>
+                                <h4 class=\"cart-title pro\"> $$total</h4>
+                                </div>
+                                <div class=\"link\">
+                                <a class=\"remove-link\" href=\"index.php?page=unset&id=$id\">Remove from cart</a>
+                                </div> 
+                                ";
                             } else {
-                                $total = $price * $qty;
-                                $total2  += $total;
                                 echo "<div class=\"cart-product flex\">
-                                            <div class=\"img-cont flex\">
-                                                <img class=\"cart-img\" src=\"$pic\">
-                                                <h3 class=\"cart-name \">$name</h3>
-                                            </div>
-                                            <h4 class=\"cart-title pro\"> $$price</h4>
-                                            <div class=\"pro\">
-                                                <select class=\"cart-select\" name =\"qty\" value=\"$qty\">";
-                                for ($i = 0; $i < 100; $i++) {
-                                    if ($i == $qty) {
-                                        echo "<option value=\"$i\" selected>$i</option>";
-                                    } else {
-                                        echo "<option value = \"$i\" >$i</option>";
-                                    }
-                                }
-
-                                echo "</select>
-                                                </div>
-                                                <h4 class=\"cart-title pro\"> $$total</h4>
-                                            </div>
-                                            <div class=\"link\">
-                                                <a class=\"remove-link\" href=\"index.php?page=unset&id=$id\">Remove from cart</a>
-                                            </div> 
-                                            ";
+                                <div class=\"img-cont flex\">
+                                <img class=\"cart-img\" src=\"$pic\">
+                                <h3 class=\"cart-name \">$name</h3>
+                                </div>
+                                <h4 class=\"cart-title pro\"> $$price</h4>
+                                <div class=\"pro\">
+                                    <h4 class=\"cart-title pro\"> $qty</h4>
+                                </div>
+                                <h4 class=\"cart-title pro\"> $$total</h4>
+                                </div>
+                                <div class=\"link\">
+                                <a class=\"remove-link\" href=\"index.php?page=unset&id=$id\">Remove from cart</a>
+                                </div> 
+                                ";
                             }
                         }
                     }
                 }
             }
+            
+            $tax = $sub_total * 0.07;
+            $ttal = $tax + $sub_total + 4.99;
+            echo "</div>
+            <div class=\"cart-sec2 flex\">
+                <h1 class=\"total-title\">Order Summary</h1>
+            
+               <h4 class=\"total\">SubTotal: $$sub_total</h4>
+               <h5 class=\"total2\">Tax: $$tax</h4>
+               <h5 class=\"total2\">Shipping: $4.99</h4>
+               <h2 class=\"total\">Total: $$ttal</h2>
+               <button class=\"btn-test btn btn-long btn-black\"><a class=\"cart-link\" href=\"#\">Checkout</a></button>
+               </form>
+            </div>";
             ?>
-        </div>
+        
     </div>
 </div>

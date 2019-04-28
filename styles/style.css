@@ -788,6 +788,9 @@ footer{
     width: 100%;
     margin-bottom: 100px; 
 }
+.cart-container{
+    flex-direction: row; 
+}
 .cart-img{
     height: 200px; 
     width: 150px; 
@@ -854,4 +857,20 @@ footer{
 }
 .cart-select:focus{
     outline: none; 
+}
+.cart-sec2{
+    border: black solid 0.5px; 
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    margin-left: 50px; 
+    position: sticky;
+    top: 0;
+}
+.cart-link{
+    text-decoration: none; 
+    color: white; 
+}
+.cart-link:hover{
+    color: black; 
 }
