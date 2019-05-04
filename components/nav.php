@@ -21,7 +21,17 @@
     </div>
     <div class="navigation__box navigation__box--short">
             <div class="navigation__icons">
-                <a class="navigation__link navigation__link--small" href="index.php?page=loginPage">Sign in/Register</a>
+                <?php 
+                    include_once('library/getName.php');
+                    // $con = connectToDb();
+                    if(isset($_SESSION['user'])){
+                        $name = get_Name($_SESSION['user']);
+                        echo "<a class=\"navigation__link navigation__link--small\" href=\"index.php?page=loginPage\">Hi, $name</a>";
+                    }else{
+                        echo "<a class=\"navigation__link navigation__link--small\" href=\"index.php?page=loginPage\">Sign in/Register</a>";
+
+                    }
+                ?>
                 <a class="navigation__link navigation__link--small" href="index.php?page=wishlist"><i class="navigation_icon navigation__wishlist far fa-heart"></i></a>
                 <a class="navigation__link navigation__link--small" href="index.php?page=cart"><i class="navigation_icon navigation_shopping-bag fas fa-shopping-bag"></i>
                     <?php 

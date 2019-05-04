@@ -13,14 +13,14 @@
             $con = connectToDb();
             $sub_total = 0;
 
-            $cart = $_SESSION['cart'];
+            // $cart = $_SESSION['cart'];
             if (!isset($_SESSION['cart'])) {
                 $_SESSION['cart'] = array();
                 echo "<div class=\"flex msg-container fail-msg-container\">
                 <h2 class =\"fail-msg msg\">Shopping cart is empty.</h2>
                 </div>";
             } else {
-                if (count($cart) == 0) {
+                if (count($_SESSION['cart']) == 0) {
                     echo "<div class=\"flex msg-container fail-msg-container\">
                     <h2 class =\"fail-msg msg\">Shopping cart is empty.</h2>
                     </div>";
@@ -86,7 +86,7 @@
                <h5 class=\"total2\">Tax: $$tax</h4>
                <h5 class=\"total2\">Shipping: $4.99</h4>
                <h2 class=\"total\">Total: $$ttal</h2>
-               <button class=\"btn-test btn btn-long btn-black\"><a class=\"cart-link\" href=\"#\">Checkout</a></button>
+               <button class=\"btn-test btn btn-long btn-black\"><a class=\"cart-link\" href=\"index.php?page=checkout\">Checkout</a></button>
                </form>
             </div>";
             ?>

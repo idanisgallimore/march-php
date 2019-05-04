@@ -13,7 +13,7 @@
             <!-- Second half -->
         <div class="ls6__find-store flex">
             <img class="ls6__image" src="images/landing/store.jpg">
-            <a class="ls6__subtext" href="index.php?page=findStore">FIND A STORE</a>
+            <a class="ls6__subtext" href="index.php?page=findStore">CONTACT US</a>
         </div>
     </div>
     <div class="landing-section6__social flex">

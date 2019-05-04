@@ -77,7 +77,8 @@ body{
 }
 .navigation__icons{
     display: flex; 
-    margin: auto; 
+    margin: auto;
+    color: black; 
     margin-top: 10px; 
     flex-direction: row;
     justify-content: space-evenly;
@@ -96,7 +97,8 @@ body{
     margin-bottom: 20px; 
 }
 .navigation__search-icon{
-    padding-right: 20px;  
+    padding-right: 20px; 
+    color: black;  
 }
 /* message pages */
 .msg-container{
@@ -873,4 +875,53 @@ footer{
 }
 .cart-link:hover{
     color: black; 
+}
+/* contact page */
+/* contact page */
+.con-sec2{
+    flex-direction: row;
+    height: 450px;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    margin-left: 100px;
+}
+.con-inp{
+    width: 50%;
+    height: 40px;
+    margin-bottom: 30px;
+    border: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 20px;
+}
+.con-inp::placeholder, textarea::placeholder{
+    font-size: 20px;
+    padding-bottom: 5px;
+}
+.con-textarea{
+    border: 1px solid black;
+    outline: none;
+    font-size: 20px;
+    width: 50%;
+    height: 100px;
+    resize: none;
+}
+.location-title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.actual-location{
+    font-size: 20px;
+}
+.cont-title{
+    margin-bottom: 100px;
+}
+.btn-contact{
+    margin-top: 20px; 
 }
