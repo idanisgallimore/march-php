@@ -4,11 +4,10 @@
     <div class="wish-items">
         <?php
         include_once('library/connectToDb.php');
-        // Change this when login is done
-        $customer_id = 1;
-        // Change above please
+        include_once('library/getId.php');
+        $user = get_id($_SESSION['user']);
         $con = connectToDb();
-        $query = "SELECT * FROM wishlist WHERE customer_id = '$customer_id'";
+        $query = "SELECT * FROM wishlist WHERE customer_id = '$user'";
         $result = mysqli_query($con, $query);
         $rowcount=mysqli_num_rows($result);
         if($rowcount == 0){

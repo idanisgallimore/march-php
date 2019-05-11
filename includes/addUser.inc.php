@@ -64,7 +64,8 @@ if ($badUser === 0) {
             <a href=\"index.php?page=createaccount&email=$email\" class=\"page-link\">HOME</a>
             </div>";
     } else {
-        $password = password_hash($password, PASSWORD_DEFAULT);
+        // $password = password_hash($password, PASSWORD_DEFAULT);
+        // $password = password_hash($password, PASSWORD_DEFAULT);
         $email = strtolower($email);
         $query = "INSERT INTO customers(first_name, last_name, email, password) VALUES('$name','$last_name', '$email', '$password')";
         $result = mysqli_query($con, $query);

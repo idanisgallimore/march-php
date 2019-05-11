@@ -13,7 +13,9 @@ function getQueryVariable(variable) {
 };
 // add items to wishlist 
 try {
+    // var cust_id = '<?php echo $_SESSION["user"];?>';
     var productId = getQueryVariable("id");
+    var custId = getQueryVariable("user");
     console.log("This is the product id: " + productId);
 
     var icon = document.querySelector(".item_icon");
@@ -31,7 +33,7 @@ try {
         };
         xhttp.open("POST", "includes/addToWishList.php", true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("id=" + productId);
+        xhttp.send("id=" + productId + "&cust=" + custId);
     });
 }catch(error){
     console.log("ignore this: " + error);

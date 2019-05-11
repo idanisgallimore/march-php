@@ -1,5 +1,6 @@
 <?php
 session_start();
+// echo $_SESSION['user'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,10 +21,10 @@ session_start();
     ?>
     <div class="nav-padding"></div>
 
-    <div class="message-box">
+    <!-- <div class="message-box">
         <i class="ms-icon fas fa-times"></i>
-        <p class="ms-text">dghdhg</p>
-    </div>
+        <p class="ms-text"></p>
+    </div> -->
 
     <?php
     if (!isset($_REQUEST['page'])) {

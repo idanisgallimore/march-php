@@ -13,18 +13,10 @@
     // redirect 
     header("location: index.php?page=cart");
     die();
-    // echo "<div class=\"flex msg-container fail-msg-container\">
-    //     <h2 class =\"fail-msg msg\">Product added to cart.</h2>
-    //     <a href=\"javascript:history.go(-1)\" class=\"page-link\">Go back</a>
-    // </div>";
 }else{
     $_SESSION['cart'][$id] = $qty; 
     header("location: index.php?page=cart");
     die();
-    // echo "<div class=\"flex msg-container fail-msg-container\">
-    //     <h2 class =\"fail-msg msg\">Product updated in cart.</h2>
-    //     <a href=\"javascript:history.go(-1)\" class=\"page-link\">Go back</a>
-    // </div>";
    }
 
 ?>

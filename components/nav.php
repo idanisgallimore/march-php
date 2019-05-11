@@ -29,10 +29,16 @@
                         echo "<a class=\"navigation__link navigation__link--small\" href=\"index.php?page=loginPage\">Hi, $name</a>";
                     }else{
                         echo "<a class=\"navigation__link navigation__link--small\" href=\"index.php?page=loginPage\">Sign in/Register</a>";
-
+                        
                     }
+                    ?>
+                <a class="navigation__link navigation__link--small" 
+                <?php 
+                    include_once('library/getId.php');
+                    $user = get_id($_SESSION['user']);
+                    echo "href=\"index.php?page=wishlist&user=$user\"><i class=\"navigation_icon navigation__wishlist far fa-heart\"></i>";
                 ?>
-                <a class="navigation__link navigation__link--small" href="index.php?page=wishlist"><i class="navigation_icon navigation__wishlist far fa-heart"></i></a>
+                </a>
                 <a class="navigation__link navigation__link--small" href="index.php?page=cart"><i class="navigation_icon navigation_shopping-bag fas fa-shopping-bag"></i>
                     <?php 
                         if(isset($_SESSION['cart'])){

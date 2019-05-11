@@ -51,3 +51,9 @@ if ($qty > $stock || $stock == 0) {
         </div>";
     // var_dump($_SESSION["cart"]);
 }
+
+login 
+<!-- echo "<div class=\"flex msg-container fail-msg-container\">
+        <h2 class =\"fail-msg msg\">Login Failed </h2>
+        <a href=\"javascript:history.go(-1)\" class=\"page-link\">Try again</a>
+        </div>"; -->

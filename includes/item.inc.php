@@ -2,7 +2,7 @@
     <?php
     $id = $_REQUEST['id'];
     $cat = $_REQUEST['cat'];
-
+    
     include_once('library/connectToDb.php');
     $con = connectToDb();
     $query = "SELECT * FROM products WHERE product_id = '$id'";
