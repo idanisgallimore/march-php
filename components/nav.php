@@ -32,13 +32,18 @@
                         
                     }
                     ?>
-                <a class="navigation__link navigation__link--small" 
-                <?php 
-                    include_once('library/getId.php');
-                    $user = get_id($_SESSION['user']);
-                    echo "href=\"index.php?page=wishlist&user=$user\"><i class=\"navigation_icon navigation__wishlist far fa-heart\"></i>";
-                ?>
-                </a>
+                <a class="navigation__link navigation__link--small" href="
+                    <?php 
+                        if(isset($_SESSION['user'])){
+                            include_once('library/getId.php');
+                            $user = get_id($_SESSION['user']);
+                            echo "index.php?page=wishlist&id=$user";
+                        }else{
+                            echo "index.php?page=wishlist&id=null";
+                        }
+                    ?>
+                
+                "><i class="navigation_icon navigation__wishlist far fa-heart"></i></a>
                 <a class="navigation__link navigation__link--small" href="index.php?page=cart"><i class="navigation_icon navigation_shopping-bag fas fa-shopping-bag"></i>
                     <?php 
                         if(isset($_SESSION['cart'])){
@@ -49,8 +54,13 @@
                     ?>
                 </a>
             </div>
-            <div class="navigation__search-bar">
-                <i class="navigation__search-icon fas fa-search"></i>
+            <div class="navigation__search-bar flex">
+                <!-- <i class="navigation__search-icon fas fa-search"></i> -->
+                <?php 
+                    if(isset($_SESSION['user'])){
+                        echo "<a class=\"logout navigation__link\" href=\"index.php?page=logout\">Sign out</a>";
+                    }
+                ?>
             </div>
     </div>
 </nav>

@@ -96,6 +96,13 @@ body{
     font-size: 20px; 
     margin-bottom: 20px; 
 }
+.logout{
+    color: #9E9E9E;
+    padding-right: 20px; 
+}
+.logout:hover{
+    color: black;
+}
 .navigation__search-icon{
     padding-right: 20px; 
     color: black;  

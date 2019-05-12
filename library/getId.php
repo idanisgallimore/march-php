@@ -8,15 +8,14 @@
             if($result){
                 while ($row = mysqli_fetch_assoc($result)){
                     $id = $row["customer_id"];
-        
                 }
                 return $id; 
             }else{
                 echo mysqli_error($con);
             }
-
         }else{
-            $user = null;
+            $id = 1;
+            return $id; 
         }
     };
 ?>
