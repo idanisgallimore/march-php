@@ -8,6 +8,13 @@
         $query = "SELECT * FROM products WHERE category_id = '6'";
         $result = mysqli_query($con, $query);
 
+        include_once('library/getId.php');
+        if(isset($_SESSION['user'])){
+            $user = get_id($_SESSION['user']);
+        }else{
+            $user = null;
+        }
+
         while ($row = mysqli_fetch_assoc($result)) {
             $id = $row["product_id"];
             $pic = $row["picture"];
@@ -15,7 +22,7 @@
             $price = $row['price'];
             $fullPic = $pic . $id . ".jpg";
 
-            echo "<a href = \"index.php?page=item&id=$id&cat=6\" class = \"product_container flex\">
+            echo "<a href = \"index.php?page=item&id=$id&cat=6&user=$user\" class = \"product_container flex\">
                <img class = \"product_image\" src = \"$pic\">
                 <div class = \"product-text flex\">
                     <p class = \"product-title product\">$name</p>

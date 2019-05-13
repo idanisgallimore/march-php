@@ -7,9 +7,8 @@
         include_once('library/getId.php');
         // $user = get_id($_SESSION['user']);
         $user = $_REQUEST['id'];
-        // echo $user; 
 
-        if (!is_null($user)) {
+        if ($user !== null) {
             $con = connectToDb();
             $query = "SELECT * FROM wishlist WHERE customer_id = '$user'";
             $result = mysqli_query($con, $query);

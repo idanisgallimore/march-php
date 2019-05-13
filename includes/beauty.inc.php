@@ -8,8 +8,13 @@
         $con = connectToDb();
         $query = "SELECT * FROM products WHERE category_id = '8'";
         $result = mysqli_query($con, $query);
-        $user = get_id($_SESSION['user']);
-
+        // $user = get_id($_SESSION['user']);
+        
+        if(isset($_SESSION['user'])){
+            $user = get_id($_SESSION['user']);
+        }else{
+            $user = null;
+        }
 
         while ($row = mysqli_fetch_assoc($result)) {
             $id = $row["product_id"];
