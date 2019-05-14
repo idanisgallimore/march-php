@@ -35,9 +35,9 @@
                             $price = $row['price'];
                             $stock = $row['quantity'];
                             $total = $price * $qty;
-                            
+
                             $sub_total += $total;
-                            
+
                             if ($stock == 0) {
                                 echo "<div class=\"cart-product flex\">
                                 <div class=\"img-cont flex\">
@@ -75,9 +75,15 @@
                     }
                 }
             }
-            
+
             $tax = $sub_total * 0.07;
             $ttal = $tax + $sub_total + 4.99;
+            include_once('library/getId.php');
+            if (isset($_SESSION['user'])) {
+                $user = get_id($_SESSION['user']);
+            } else {
+                $user = null;
+            }
             echo "</div>
             <div class=\"cart-sec2 flex\">
                 <h1 class=\"total-title\">Order Summary</h1>
@@ -86,10 +92,10 @@
                <h5 class=\"total2\">Tax: $$tax</h4>
                <h5 class=\"total2\">Shipping: $4.99</h4>
                <h2 class=\"total\">Total: $$ttal</h2>
-               <button class=\"btn-test btn btn-long btn-black\"><a class=\"cart-link\" href=\"index.php?page=checkout\">Checkout</a></button>
+               <button class=\"btn-test btn btn-long btn-black\"><a class=\"cart-link\" href=\"index.php?page=checkout&user=$user\">Checkout</a></button>
                </form>
             </div>";
             ?>
-        
+
+        </div>
     </div>
-</div>

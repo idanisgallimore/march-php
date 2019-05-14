@@ -932,3 +932,47 @@ footer{
 .btn-contact{
     margin-top: 20px; 
 }
+/* checkout page */
+.checkout-container{
+    flex-direction: row; 
+    height: 500px; 
+
+}
+.checkout-info{
+    background-color: white; 
+    width: 70%; 
+    height: 100%; 
+    margin-left: 20px; 
+}
+.ch-info{
+    width: 50%; 
+    height: 100%; 
+    flex-direction: column; 
+}
+/* .ch-info1{
+} */
+.checkout-form{
+   height: 80%; 
+   flex-direction: row; 
+   margin: auto;  
+}
+.ch-title{
+    text-align: center; 
+}
+.checkout_label{
+    width: 30%; 
+    margin-left: 20px; 
+    margin-bottom: 10px;
+    font-size: 16px; 
+
+}
+.chout-item{
+    width: 70%; 
+    margin-left: 20px; 
+    margin-bottom: 10px;
+    border: 0; 
+    border-bottom: 1px solid black; 
+}
+.chout-item:focus{
+    outline: none;
+}
