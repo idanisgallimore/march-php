@@ -1,4 +1,6 @@
-<h1 class="page-title">CONTACT US</h1>
+<div class="header-cont contact-c">
+    <h1 class="page-title">CONTACT US</h1>
+</div>
 <div class="section con-sec2 flex">
     <form class="contact-form" action="index.php" method="post">
         <input type="text" class="con-inp" name="sender" placeholder="Your name">

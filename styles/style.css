@@ -127,6 +127,19 @@ body{
     padding-bottom: 5px; 
     border-bottom: #707B7C solid 1px;
 }
+/* header stuff */
+.header-cont{
+    width: 100%;
+    height: 200px;
+}
+.contact-c{
+    background-image: url("../images/other/img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white; 
+    font-size: 30px; 
+}
 /* landing page */
 .jumbotron{
     width: 100%; 

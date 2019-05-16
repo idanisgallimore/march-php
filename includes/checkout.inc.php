@@ -31,6 +31,7 @@
                                 <input class=\"chout-item\" name=\"city\" type=\"text\" value=\"$city\">
                                 <label class=\"checkout_label\" for=\"fName\">State:</label>
                                 <input class=\"chout-item\" name=\"state\" type=\"text\" value=\"$state\">
+                                <input  name=\"userid\" type=\"hidden\" value=\"$user\">
                                 <label class=\"checkout_label\" for=\"fName\">Zipcode:</label>
                                 <input class=\"chout-item\" name=\"zipcode\" type=\"text\" value=\"$zipcode\">";
                         }
