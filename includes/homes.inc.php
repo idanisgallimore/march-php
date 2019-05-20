@@ -6,7 +6,7 @@
         include_once('library/connectToDb.php');
         include_once('library/getId.php');
         $con = connectToDb();
-        $query = "SELECT * FROM products WHERE category_id = '3'";
+        $query = "SELECT * FROM products WHERE category_id = '5'";
         $result = mysqli_query($con, $query);
 
         if(isset($_SESSION['user'])){

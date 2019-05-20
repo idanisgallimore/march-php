@@ -37,7 +37,7 @@
                         if(isset($_SESSION['user'])){
                             include_once('library/getId.php');
                             $user = get_id($_SESSION['user']);
-                            echo "index.php?page=wishlist&id=$user";
+                            echo "index.php?page=wishlist&user=$user";
                         }else{
                             echo "index.php?page=wishlist&id=null";
                         }

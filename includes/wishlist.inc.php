@@ -5,8 +5,12 @@
         <?php
         include_once('library/connectToDb.php');
         include_once('library/getId.php');
-        // $user = get_id($_SESSION['user']);
-        $user = $_REQUEST['id'];
+        
+        if(isset($_SESSION['user'])){
+            $user1 = get_id($_SESSION['user']);
+        }else{
+            $user = $_REQUEST['user'];
+        }
 
         if ($user !== null) {
             $con = connectToDb();
@@ -62,7 +66,7 @@
                             <button class=\" btn btn-long btn-black\">Add to cart</button>
                             <input type = \"hidden\" name=\"page\" value=\"test\">
                             </form>
-                                <a href=\"index.php?page=removeFromWL&id=$id\" class=\"wl-link\">Remove</a>
+                                <a href=\"index.php?page=removeFromWL&id=$id&user=$user1\" class=\"wl-link\">Remove</a>
                             </div>
                         </div>";
                         }
